@@ -92,13 +92,13 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v3.0.2
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
       with:
-        # Artifact name
-        name: buildoutput_${{ matrix.configuration }}
-        # Destination path
-        path: D:\a\test\test\ConsoleApp1\bin\${{ matrix.configuration }}\ConsoleApp1.exe
+        name: build_${{ matrix.configuration }}
+        path: D:\a\test\test\ConsoleApp1\ConsoleApp1\bin\${{ matrix.configuration }}\ConsoleApp1.exe
+        retention-days: 5
+        
 
     # Decode the base 64 encoded pfx and save the Signing_Certificate
     #- name: Decode the pfx

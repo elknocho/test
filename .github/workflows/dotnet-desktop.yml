@@ -98,7 +98,7 @@ jobs:
         # Artifact name
         name: buildoutput_${{ matrix.configuration }}
         # Destination path
-        path: D:\a\test\test\ConsoleApp1\ConsoleApp1\bin\${{ matrix.configuration }}\ConsoleApp1.exe
+        path: D:\a\test\test\ConsoleApp1\bin\${{ matrix.configuration }}\ConsoleApp1.exe
 
     # Decode the base 64 encoded pfx and save the Signing_Certificate
     #- name: Decode the pfx

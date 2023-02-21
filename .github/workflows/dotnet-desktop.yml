@@ -36,12 +36,11 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: .NET Core Desktop
+name: .NET Core Desktop ${{ GITHUB_ENV }}
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
+  release:
+    types: [prereleased, released]
     branches: [ "master" ]
 
 jobs:
@@ -50,6 +49,7 @@ jobs:
 
     strategy:
       matrix:
+        #configuration: [Debug, Release]
         configuration: [Debug, Release]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
